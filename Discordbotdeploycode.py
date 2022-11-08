@@ -22,7 +22,7 @@ from mytoken import DISCORD_TOKEN
 apikey= API_KEY
 lmt=11
 
-intents=discord.Intents.default()
+intents = discord.Intents.default()
 intents.members = True
 
 #bot command set up
