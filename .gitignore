@@ -1,3 +1,5 @@
 mytoken.py
 __pycache__
 config.py
+word_substitute.json
+env/

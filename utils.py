@@ -1,3 +1,4 @@
+import json
 import random
 
 import discord
@@ -43,3 +44,9 @@ async def find_and_send_gif(ctx, embed_name: str, embed_message: str, search_ter
 def special_number():
     number = random.randint(0, 99)
     return number
+
+
+def open_word_substitution_file(subsitution_fp: str = "word_substitute.json"):
+    with open(subsitution_fp, "r") as f:
+        data = json.load(f)
+        return data
