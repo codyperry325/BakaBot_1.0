@@ -4,10 +4,9 @@ import random
 import re
 
 import discord
-from discord.ext import commands
-
 import utils
 from config import DISCORD_TOKEN
+from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.members = True

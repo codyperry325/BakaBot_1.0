@@ -3,7 +3,6 @@ import random
 
 import discord
 import requests
-
 from config import TENOR_API_KEY, TENOR_LIMIT
 
 

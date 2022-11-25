@@ -1,5 +1,5 @@
 mytoken.py
 __pycache__
-config.py
-word_substitute.json
+bot/config.py
+bot/word_substitute.json
 env/
