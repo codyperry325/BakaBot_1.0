@@ -5,6 +5,5 @@ RUN apk --no-cache add gcc musl-dev
 WORKDIR /app
 ADD bot/ .
 ADD requirements.txt .
-RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python", "bot.py"]

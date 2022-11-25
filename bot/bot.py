@@ -10,12 +10,13 @@ from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.members = True
+intents.message_content = True
 intents.messages = True
 
 # bot command set up
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or("#"), intents=intents)
-client = discord.Client()
+client = discord.Client(intents=intents)
 word_substitutions = utils.open_word_substitution_file()
 
 # connection to the server
@@ -64,7 +65,6 @@ async def send_modified_message(message):
                 )
                 made_substitution = True
         if made_substitution:
-            print(message_contents)
             await message.channel.send(message_contents, reference=message)
 
 
