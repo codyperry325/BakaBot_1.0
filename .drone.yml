@@ -6,6 +6,7 @@ name: default
 steps:
 - name: build and push container
   image: docker:dind
+  privileged: true
   volumes:
   - name: dockersock
     path: /var/run
