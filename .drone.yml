@@ -8,7 +8,7 @@ steps:
   image: plugins/docker
   privileged: true
   settings:
-    repository: git.bhaanukaul.com
+    registry: git.bhaanukaul.com
     username: svc-container-manager
     password:
       from_secret: khg_bot_discord_token
