@@ -5,7 +5,7 @@ name: default
 steps:
 - name: build and push container
   image: docker:dind
-  settings:
+  environment:
     discord_token:
       from_secret: khg_bot_discord_token
     container_manager_pwd:
