@@ -1,3 +1,4 @@
+# import argparse
 import asyncio
 import datetime
 import random
@@ -5,9 +6,14 @@ import re
 
 import discord
 import utils
-from config import DISCORD_TOKEN
+
+# from config import DISCORD_TOKEN
 from discord.ext import commands
 
+# parser = argparse.ArgumentParser(prog="khg-bot", description="khg-bot")
+# parser.add_argument('-t', '--token', required=True)
+# args = parser.parse_args()
+# discord_token = args.token
 intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
@@ -537,5 +543,5 @@ async def event(ctx, activity: str, date: str, time: str, descr: str):
 # command sections for incoming members to get rules and such
 
 # command section for UWU bot
-
-bot.run(DISCORD_TOKEN)
+discord_token = utils.read_discord_token()
+bot.run(discord_token)
