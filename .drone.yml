@@ -11,6 +11,6 @@ steps:
     container_manager_pwd:
       from_secret: gitea_svc_container_manager
   commands:
-    - echo $container_manager_pwd | docker login --username svc-container-manager --password-stdin
+    - echo $container_manager_pwd | docker login git.bhaanukaul.com --username svc-container-manager --password-stdin
     - make build
     - make push
