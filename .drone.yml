@@ -10,7 +10,7 @@ steps:
     registry: git.bhaanukaul.com
     username: svc-container-manager
     password:
-      from_secret: khg_bot_discord_token
+      from_secret: gitea_svc_container_manager
     repo: git.bhaanukaul.com/svc-container-manager/khg-bot
     tags: latest
   environment:
