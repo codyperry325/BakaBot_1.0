@@ -12,7 +12,8 @@ steps:
     username: svc-container-manager
     password:
       from_secret: khg_bot_discord_token
-    repo: git.bhaanukaul.com/bhaanukaul/khg-bot
+    repo: git.bhaanukaul.com/svc-container-manager/khg-bot
+    auto_tag: true
     tags: latest
   environment:
     discord_token:
