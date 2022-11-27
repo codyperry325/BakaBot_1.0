@@ -16,3 +16,6 @@ steps:
   environment:
     discord_token:
       from_secret: khg_bot_discord_token
+
+node:
+  host: devastator
