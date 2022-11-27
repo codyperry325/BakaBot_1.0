@@ -5,33 +5,15 @@ name: default
 
 steps:
 - name: build and push container
-  image: docker:dind
+  image: plugins/docker
   privileged: true
-  volumes:
-  - name: dockersock
-    path: /var/run
+  settings:
+    repository: git.bhaanukaul.com
+    username: svc-container-manager
+    password:
+      from_secret: khg_bot_discord_token
+    repo: git.bhaanukaul.com/bhaanukaul/khg-bot
+    tags: latest
   environment:
     discord_token:
       from_secret: khg_bot_discord_token
-    container_manager_pwd:
-      from_secret: gitea_svc_container_manager
-  commands:
-    - apk add --no-cache make
-    # - echo $container_manager_pwd | docker login -u svc-container-manager --password-stdin git.bhaanukaul.com
-    - make build
-    - make push
-
-services:
-- name: docker
-  image: docker:dind
-  privileged: true
-  volumes:
-  - name: dockersock
-    path: /var/run
-
-volumes:
-- name: dockersock
-  temp: {}
-
-node:
-  host: devastator
