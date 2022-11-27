@@ -31,3 +31,6 @@ services:
 volumes:
 - name: dockersock
   temp: {}
+
+node:
+  host: devastator
