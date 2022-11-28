@@ -16,6 +16,23 @@ steps:
   environment:
     discord_token:
       from_secret: khg_bot_discord_token
+  when:
+    branch:
+    - main
+
+- name: run container
+  image: docker:dind
+  volumes:
+    - name: dockersock
+      path: /var/run/docker.sock
+  when:
+    branch:
+      - main
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
 
 node:
   host: devastator
