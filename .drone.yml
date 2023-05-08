@@ -1,0 +1,38 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+steps:
+- name: build and push container
+  image: plugins/docker
+  settings:
+    registry: git.bhaanukaul.com
+    username: svc-container-manager
+    password:
+      from_secret: gitea_svc_container_manager
+    repo: git.bhaanukaul.com/svc-container-manager/khg-bot
+    tags: latest
+  environment:
+    discord_token:
+      from_secret: khg_bot_discord_token
+  when:
+    branch:
+    - main
+
+- name: run container
+  image: docker:dind
+  volumes:
+    - name: dockersock
+      path: /var/run/docker.sock
+  when:
+    branch:
+      - main
+
+volumes:
+- name: dockersock
+  host:
+    path: /var/run/docker.sock
+
+node:
+  host: devastator

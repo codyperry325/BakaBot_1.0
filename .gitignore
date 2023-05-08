@@ -1,2 +1,5 @@
 mytoken.py
 __pycache__
+bot/config.py
+bot/word_substitute.json
+env/
